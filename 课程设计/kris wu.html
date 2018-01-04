@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />  
+	<style type="text/css">
+		* {
+		font-size:12px;
+		margin:0px;
+		padding:0px;
+		}
+		#nav{
+		margin-top: 20px;
+		margin-left: 50px;
+		list-style:none;
+		line-height:27px;
+		position:relative;
+		left: 30%;
+		}
+		#nav a:link,#nav a:visited{
+		display:block;
+		width:80px;
+		color: #666;
+		text-align:center;
+		text-decoration:none;
+		background:#CCC;
+		}
+		#nav a:hover{
+		color: #FFF;
+		text-decoration: underline;
+		font-weight: bold;
+		background:#999;
+		}
+		#nav ul{list-style: none;}
+		#nav li{
+		float:left;
+		width: 100px;
+		}
+		#nav li ul li a:hover{
+		background:gray;
+		}
+
+		#nav li ul{
+		display:none;
+		}
+		#nav li.subMenuShow ul{
+		display:block;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			
+			var liNodes = document.getElementsByTagName("li");
+			for (var i=0; i<liNodes.length; i++)
+			{
+				liNodes[i].onmouseover = function(){
+					this.className = "subMenuShow";
+				}
+				liNodes[i].onmouseout = function(){
+					this.className = "";
+				}
+			}
+
+			var username = document.getElementById("username");	
+			username.onblur = checkUsername;
+		}
+
+		
+		function checkUsername() {
+			var username=document.getElementById('username');
+			var oldspan=document.getElementsByTagName('span');
+			if(username.value=='')
+			{
+			
+				if(oldspan.length>0){
+					oldspan[0].parentNode.removeChild(oldspan[0]);
+				}
+				
+				var newspan=document.createElement('span');
+				username.parentNode.appendChild(newspan);
+				var txtnode=document.createTextNode('必须输入用户名');
+				newspan.appendChild(txtnode);
+				newspan.style.color='red';
+				username.focus();
+			}
+			else
+			{
+				if(oldspan.length>0){
+					oldspan[0].parentNode.removeChild(oldspan[0]);
+				}
+				var newspan=document.createElement('span');
+				username.parentNode.appendChild(newspan);
+				var txtnode=document.createTextNode('用户名可以注册');
+				newspan.appendChild(txtnode);
+				newspan.style.color='red';
+			}	
+		}
+	</script>
+	<style type="text/css">
+  	#picScroll{
+  		width:850px;
+  		height:400px;
+  		white-space:nowrap;
+  		overflow:hidden;
+  		position: relative;
+  		left: 250px;
+  		top: 90px;
+  	}
+  	#picScroll1{
+  	}
+  	#picScroll2{
+  	}
+  	form{
+  		position: relative;
+  		left:500px;
+  	}
+  	</style>
+</head>
+<body>
+	<ul id="nav">
+		<li><a  href="#">主页</a>
+			<ul >
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">主页介绍</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin"></a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">工作历程</a></li>
+			</ul>
+		</li>
+		<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">相册</a>
+			<ul>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">主人相册</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">最新图集</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">动感影集</a></li>
+			</ul>
+		</li>
+		<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">日志</a>
+			<ul>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">个人活动</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">公益项目</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">社会活动</a></li>
+			</ul>
+		</li>
+		<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">好友</a>
+			<ul>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">好友介绍</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">学历介绍</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">工作历程</a></li>
+			</ul>
+		</li>
+		<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">基本信息</a>
+			<ul>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">个人资料</a></li>
+				<li><a href="https://baike.baidu.com/item/%E5%90%B4%E4%BA%A6%E5%87%A1/8325774?fr=aladdin">工作室信息</a></li>
+			</ul>
+		</li>
+	</ul>
+<br/><br><br>
+	<div id="picScroll">
+		<span id="picScroll1">
+			<img src="images/1.jpg" />
+			<img src="images/2.jpg" />
+			<img src="images/3.jpg" />
+			<img src="images/4.jpg" />
+			<img src="images/5.jpg" />
+			<img src="images/6.jpg" />
+			<img src="images/7.jpg" />
+			<img src="images/8.jpg" />
+		</span>
+		<span id="picScroll2"></span>
+ 	</div> 
+ 	<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+ 	<form>
+		<table border="1" cellspacing="10" cellpadding="10">
+			<tr>
+				<td>用户名：</td>
+				<td><input type="text" id="username" name="username" /><span id="errorTip"></span></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" id="passwd"</td>
+			</tr>
+			<tr>
+				<td>确认密码：</td>
+				<td><input type="password" id="rePasswd"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="reset" id="reset" value="取消" />
+				<input id="submit" type="submit" value="注册" /></td>
+			</tr>
+		</table>
+	</form>
+ 	<script type="text/javascript">	
+ 	    var speed=10; 
+        var tab=document.getElementById("picScroll"); 
+        var tab1=document.getElementById("picScroll1"); 
+        var tab2=document.getElementById("picScroll2"); 
+        tab2.innerHTML=tab1.innerHTML; 
+        function changeToLeft(){ 
+            if(tab1.offsetWidth-tab.scrollLeft<0) 
+                tab.scrollLeft=0;
+            else{ 
+                tab.scrollLeft++; 
+            } 
+        } 
+        var MyMar=setInterval(changeToLeft,speed); 
+        tab.onmouseover=function(){clearInterval(MyMar)}; 
+        tab.onmouseout=function()
+        {MyMar=setInterval(changeToLeft,speed)}; 
+ 	</script>
+</body>
+</html>
